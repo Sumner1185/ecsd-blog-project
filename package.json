@@ -1,0 +1,28 @@
+{
+  "name": "ecsd-blog-project",
+  "version": "1.0.0",
+  "description": "ecsd blog project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sumner1185/ecsd-blog-project.git"
+  },
+  "author": "Alastair/Joe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sumner1185/ecsd-blog-project/issues"
+  },
+  "homepage": "https://github.com/Sumner1185/ecsd-blog-project#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "cypress": "^5.4.0",
+    "express": "^4.17.1",
+    "jest": "^26.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.0"
+  }
+}
