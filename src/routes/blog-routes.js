@@ -1,10 +1,16 @@
 const { Router } = require('express')
 const router = new Router()
-const blog = require ('../blogs/teaching_code.doc')
+const fs = require('fs');
+const path = require('path')
+
+
+
+
 
 router.get('/', (req, res) => {
-    res.json(blog)
+    res.send(blog)
 })
 
+console.log(dataObj)
 
 module.exports = router

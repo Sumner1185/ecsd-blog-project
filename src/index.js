@@ -1,12 +1,16 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const PORT = 3000; 
 
-app.set('port', process.env.PORT || 4000)
+
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
+app.use('/blog', require('./routes/blog-routes'))
 
-app.use('/', require('./routes/blog-routes'))
+// app.use('/', require('./routes/blog-routes'))
 
-app.listen(app.get('port'), () => console.log(`Server on port ${app.get('port')}`))
+app.listen(PORT,() =>  {
+    console.log(`API is running on port ${PORT}`)
+})
