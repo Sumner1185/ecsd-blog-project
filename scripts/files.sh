@@ -8,7 +8,6 @@ curl https://academy-project-blogs.s3-eu-west-1.amazonaws.com/milestones.txt > m
 
 fileNames=$(ls)
 
-
 for file in ${fileNames} ; do 
     echo filename: "${file%%.*}" 
     echo file extention: "${file#*.}" 
