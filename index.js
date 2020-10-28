@@ -11,19 +11,19 @@ app.engine('hbs', handlebars({
 }))
 
 
- fetch('http://localhost:3000/blogs')
-.then(res => {
-  if (res.status >= 400) {
-    throw new Error("Bad response from server");
-  }
-  return res.json();
-})
-.then(blogs => {
-    app.get('/', (req, res) =>  res.render('main.hbs', {layout : 'index', data: blogs, listExists: true}));
-})
-.catch(err => {
-  console.error(err);
-})
+fetch('http://localhost:3000/blogs')
+  .then(res => {
+    if (res.status >= 400) {
+      throw new Error("Bad response from server");
+    }
+    return res.json();
+  })
+  .then(blogs => {
+      app.get('/', (req, res) =>  res.render('main.hbs', {layout : 'index', data: blogs, listExists: true}));
+  })
+  .catch(err => {
+    console.error(err);
+  })
 
 
 app.use('/bootstrap',express.static(`${__dirname} /node_modules/bootstrap/dist`))
