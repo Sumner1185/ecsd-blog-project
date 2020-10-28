@@ -15,4 +15,18 @@ router.post('/', (req, res) => {
     }
 })
 
+router.delete('/:id', (req, res) => {
+    const { id } = req.params
+    if (id) {
+        blogs.forEach((blog, index) => {
+            if (blog.id === id) {
+                blogs.splice(index, 1)
+            }
+        })
+        res.json(blogs)
+    } else {
+        res.status(400).json({ error: 'Blog post not found' })
+    }
+})
+
 module.exports = router
