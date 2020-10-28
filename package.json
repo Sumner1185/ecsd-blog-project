@@ -19,12 +19,14 @@
       "homepage": "https://github.com/Sumner1185/ecsd-blog-project#readme",
       "dependencies": {
             "bootstrap": "^4.5.3",
+            "cross-fetch": "^3.0.6",
             "cypress": "^5.4.0",
             "eslint-plugin-blog-project": "file:eslint",
             "express": "^4.17.1",
             "express-handlebars": "^5.2.0",
             "fs": "^0.0.1-security",
             "jest": "^26.6.1",
+            "node-fetch": "^2.6.1",
             "nodemon": "^2.0.6"
       },
       "devDependencies": {

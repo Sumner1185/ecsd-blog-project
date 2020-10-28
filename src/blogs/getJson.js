@@ -10,17 +10,18 @@ jsonFormat = (data) => {
 const dataObj = [
     {
         id: 1,
+        title: 'Innovation at Scale',
         content: fs.readFileSync(path.resolve(__dirname, "./IDC.txt"), 'UTF8', function(err, data) {return data})
     },
     {
         id: 2,
-        content:  fs.readFileSync(path.resolve(__dirname, "./milestones.txt"), 'UTF8', function(err, data) {return data} )
+        title: 'Project Milestones',
+        content:  fs.readFileSync(path.resolve(__dirname, "./milestones.txt"), 'UTF8', function(err, data) {return data})
     },
     {
         id: 3,
-        content: fs.readFileSync(path.resolve(__dirname, "./teaching_code.txt"), 'UTF8', function(err, data) {return data} )
-        
-
+        title: 'Teaching Code',
+        content: fs.readFileSync(path.resolve(__dirname, "./teaching_code.txt"), 'UTF8', function(err, data) {return data})    
     }
 ]
 
