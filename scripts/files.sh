@@ -16,11 +16,3 @@ for file in ${fileNames} ; do
     echo file extention: "${file#*.}" 
     echo file size: && wc -c ${file} | awk '{print $1}'
 done;
-
-
-
-
-
-
-
-
