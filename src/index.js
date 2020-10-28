@@ -3,13 +3,10 @@ const app = express()
 const bodyParser = require('body-parser')
 const PORT = 3000; 
 
-
-
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
-app.use('/blog', require('./routes/blog-routes'))
 
-// app.use('/', require('./routes/blog-routes'))
+app.use('/blog', require('./routes/blog-routes'))
 
 app.listen(PORT,() =>  {
     console.log(`API is running on port ${PORT}`)
