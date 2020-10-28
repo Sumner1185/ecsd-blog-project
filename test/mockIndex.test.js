@@ -6,7 +6,7 @@ describe('Mock test', () => {
     
     test('should pass', () => {
         const testPhrase = "Passing test"
-        expect(testPhrase).toEqual("Passing test")
+        expect(testPhrase).toEqual("Passing tester")
     })
 
 })
