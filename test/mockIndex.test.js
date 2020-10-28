@@ -1,4 +1,4 @@
-const app = require('../src/index')
+const app = require('../index')
 const supertest = require('supertest')
 const request = supertest(app)
     
@@ -25,16 +25,3 @@ describe('mock test api endpoint', () => {
     })
 })
 
-//  describe('live api endpoints', () => {  
-//     test('GET route', async done => {
-//         const { body } = await request(app).get('/blogs')
-//         expect(body.length).toEqual(3)
-//         expect(body[0].id).toEqual(1)
-//         done()
-//     })
-
-//     test('POST route', async done => {
-//         const { body } = await request(app).post('/blogs')
-//         done()
-//     })
-//  })
