@@ -1,9 +1,17 @@
 const { Router } = require('express')
 const router = new Router()
+const path = require('path')
 
 const blogs = require('../blogs/data/data.json')
 
-router.get('/blogs', (req, res) => res.json(blogs))
+router.get('/blogs', (req, res) => {
+    res.json(blogs)
+})
+
+router.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname + '../../../about.html'));
+})
+
 
 router.post('/blogs', (req, res) => {
     const blogPost = { id: (blogs.length + 1).toString(), ...req.body }

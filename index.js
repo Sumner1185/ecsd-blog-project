@@ -28,11 +28,11 @@ app.engine('hbs', handlebars({
   console.error(err);
 })
 
-
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
 app.use('/', require('./src/routes/blog-routes'))
+
 
 
 module.exports = app

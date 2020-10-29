@@ -4,12 +4,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-footer {
-    padding: 10px;
-    height: 20%;
-    background: white; 
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    text-decoration-style: solid;
 }
-
 
 li {
     list-style: none;
@@ -22,13 +23,39 @@ article h2 {
     text-decoration: underline;
 }
 
-
-.container {
-    width: 80%;
-    color: slategrey;
-}
-
 .card-content {
     color: white;
     opacity: 70%;
+}
+
+.page-footer {
+    color: white;
+    flex-shrink: 0;
+}
+
+footer, .push {
+    height: 100px;
+}
+
+.blog-text {
+    color: white;
+    opacity: 70%;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+  }
+  .social-list__item {
+    margin: 0 .5em;
+  }
+  .social-list__link {
+    padding: .5em;
+  }
+  
+.card-group {
+    text-align: center;
 }
