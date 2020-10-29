@@ -15,6 +15,7 @@ pipeline {
             }
             stage('UI Testing') {
                 steps {
+                    sh "npm start"
                     sh 'npm run test-cypress'
                     echo 'TESTING COMPLETE'
             }
