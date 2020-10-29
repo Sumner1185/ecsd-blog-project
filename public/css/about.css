@@ -15,12 +15,16 @@ div .about-section {
   *, *:before, *:after {
     box-sizing: inherit;
   }
+
+
   
   .column {
+    
     float: left;
     padding: 0 8px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width:auto;
     max-width: 100%;
     max-height: 100%
   }
@@ -71,6 +75,7 @@ div .about-section {
   @media screen and (max-width: 650px) {
     .column {
       width: 100%;
+      column-gap: 3em;
       display: block;
       list-style: none;
     }
@@ -98,6 +103,7 @@ div .about-section {
 
 .footer-link {
     text-align: center !important ;
+    font-size: 24px;
 }
 
 img {
