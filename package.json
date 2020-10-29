@@ -4,10 +4,10 @@
       "description": "ecsd blog project",
       "main": "index.js",
       "scripts": {
-            "test": "jest --coverage",
-            "test cypress": "npx cypress open",
+            "test": "jest --testPathPattern=./test --coverage",
+            "test-cypress": "npx cypress run",
             "start": "nodemon starter.js",
-            "cypress:open": "cypress open"
+            "cypress:open": "cypress run -spec ./cypress/intergration"
       },
       "repository": {
             "type": "git",

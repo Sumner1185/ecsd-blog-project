@@ -7,10 +7,16 @@ pipeline {
                     sh "npm install"
                 }
             }
-            stage("Test") {
+            stage("Testing") {
                 steps {
                     sh "npm test"
+                    echo 'API TESTS COMPLETE'
                 }
+            }
+            stage('UI Testing') {
+                steps {
+                    sh 'npm run test-cypress'
+                    echo 'TESTING COMPLETE'
             }
             stage("Deploy") {
                 steps {

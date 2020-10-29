@@ -1,4 +1,4 @@
-const cy = require('cypress')
+
 
 describe("Al & Joe's about us page", () => {
     beforeEach(() => {
