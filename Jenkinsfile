@@ -18,6 +18,8 @@ pipeline {
                     sh 'npm run test-cypress'
                     echo 'TESTING COMPLETE'
             }
+            }
+            
             stage("Deploy") {
                 steps {
                     echo "Deployed"
@@ -26,4 +28,4 @@ pipeline {
         }
 }
 
-}
+
