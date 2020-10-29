@@ -5,7 +5,8 @@
       "main": "index.js",
       "scripts": {
             "test": "jest --coverage",
-            "start": "nodemon starter.js"
+            "start": "nodemon starter.js",
+            "cypress:open": "cypress open"
       },
       "repository": {
             "type": "git",
