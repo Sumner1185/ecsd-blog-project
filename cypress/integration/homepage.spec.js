@@ -1,3 +1,5 @@
+const cy = require('cypress')
+
 describe("Al & Joe's website", () => {
     beforeEach(() => {
         cy.visit("http://localhost:3000/");
@@ -8,14 +10,14 @@ describe("Al & Joe's website", () => {
     })
 
     it("Has blog title content", () => {
-        cy.get(':nth-child(1) > .blog-title').should("have.text", "Innovation at Scale")
-        cy.get(':nth-child(5) > .blog-title').should("have.text", "Project Milestones")
-        cy.get(':nth-child(9) > .blog-title').should("have.text", "Teaching Code")
+        cy.get(':nth-child(1) > h2').should("have.text", "Innovation at Scale")
+        cy.get(':nth-child(5) > h2').should("have.text", "Project Milestones")
+        cy.get(':nth-child(9) > h2').should("have.text", "Teaching Code")
     })
 
     it("Has blog content", () => {
-        cy.get('.title-list > :nth-child(3)').contains("How do you optimise DevOps for innovation at scale?")
-        cy.get('.title-list > :nth-child(7)').contains("The most successful career switchers take years to learn new skills")
+        cy.get('article > ul > :nth-child(3)').contains("How do you optimise DevOps for innovation at scale?")
+        cy.get('ul > :nth-child(7)').contains("The most successful career switchers take years to learn new skills")
         cy.get(':nth-child(11)').contains("Continuous learning has been a core value of ECS since the beginning.")
     })
 

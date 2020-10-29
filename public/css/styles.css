@@ -14,7 +14,8 @@ body {
 
 li {
     list-style: none;
-
+    color: white;
+    opacity: 70%;
 }
 
 article h2 {

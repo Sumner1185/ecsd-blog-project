@@ -5,7 +5,9 @@
       "main": "index.js",
       "scripts": {
             "test": "jest --coverage",
-            "start": "nodemon starter.js"
+            "test cypress": "npx cypress open",
+            "start": "nodemon starter.js",
+            "cypress:open": "cypress open"
       },
       "repository": {
             "type": "git",
@@ -30,7 +32,15 @@
             "nodemon": "^2.0.6"
       },
       "devDependencies": {
+            "@cypress/code-coverage": "^3.8.2",
+            "cypress-jest": "^0.1.10",
             "eslint": "^7.12.0",
+            "eslint-plugin-cypress": "^2.11.2",
             "supertest": "^5.0.0"
+      },
+      "eslintConfig": {
+            "extends": [
+                  "plugin:cypress/recommended"
+            ]
       }
 }

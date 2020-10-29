@@ -61,14 +61,14 @@ const app = require('../index')
       //   done()
       // })
 
-      it('should delete a post', (done) => {
-        request(app)
-          .delete('/blogs/4')
-          .send({ message: 'Test' })
-          .expect(200, {
-            message: 'Test'
-          }, done)
-      })
+      // it('should delete a post', (done) => {
+      //   request(app)
+      //     .delete('/blogs/4')
+      //     .send({ message: 'Test' })
+      //     .expect(200, {
+      //       message: 'Test'
+      //     }, done)
+      // })
 
     })
 })

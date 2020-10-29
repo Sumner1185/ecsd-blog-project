@@ -19,13 +19,12 @@ div .about-section {
 
   
   .column {
-    
     float: left;
     padding: 0 8px;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    width:auto;
-    max-width: 100%;
+    width: auto;
+    max-width: 50%;
     max-height: 100%
   }
   
@@ -83,16 +82,16 @@ div .about-section {
 
 .social-list {
     justify-content: center;
-    margin: 2em 0 0;
+    margin: 2em 1em 1em;
     padding: 0;
     text-align: center;
   }
+
   .social-list__item {
     margin: 0;
-    display: inline;
-    padding-bottom: 1px;
-   
+    display: inline-block;
   }
+
   .social-list__link {
     padding: .5em;
   }
@@ -116,5 +115,5 @@ img {
 }
 
 p {
-font-size: 32px;
+  font-size: 32px;
 }
