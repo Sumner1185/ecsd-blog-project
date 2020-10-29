@@ -3,9 +3,9 @@ const router = new Router()
 
 const blogs = require('../blogs/data/data.json')
 
-router.get('/', (req, res) => res.json(blogs))
+router.get('/blogs', (req, res) => res.json(blogs))
 
-router.post('/', (req, res) => {
+router.post('/blogs', (req, res) => {
     const blogPost = { id: (blogs.length + 1).toString(), ...req.body }
     if (blogPost.id && blogPost.content) {
         blogs.push(blogPost)
@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
     }
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/blogs/:id', (req, res) => {
     const { id } = req.params
     if (id) {
         blogs.forEach((blog, index) => {
