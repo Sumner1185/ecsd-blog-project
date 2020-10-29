@@ -7,20 +7,27 @@ pipeline {
                     sh "npm install"
                 }
             }
-            stage("Testing") {
+            stage("Jest Tests") {
                 steps {
                     sh "npm test"
                     echo 'API TESTS COMPLETE'
                 }
             }
-            stage('UI Testing') {
-                steps {
-                    sh "npm start"
-                    sh 'npm run test-cypress'
-                    echo 'TESTING COMPLETE'
-            }
-            }
-            
+            stage("UI Testing") {
+                parallel {
+                stage('Start Server') {
+                    steps {
+                    sh 'npm start'
+                    }
+                }
+                stage('Cypress Tests') {
+                    steps {
+                     sh 'npm run test-cypress'
+                     echo 'TESTING COMPLETE'
+                    }
+                }
+                }
+            } 
             stage("Deploy") {
                 steps {
                     echo "Deployed"
