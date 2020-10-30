@@ -4,15 +4,11 @@ const bodyParser = require('body-parser')
 const handlebars = require('express-handlebars')
 const fetch = require('cross-fetch');
 
-
-
 app.set('view engine', 'hbs')
 app.engine('hbs', handlebars({
     layoutsDir: `${__dirname}/views/layouts`, 
     extname: 'hbs'
 }))
-
-
 
  fetch('http://localhost:3000/blogs')
 .then(res => {
@@ -33,7 +29,4 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
 app.use('/', require('./src/routes/blog-routes'))
 
-
-
 module.exports = app
-
