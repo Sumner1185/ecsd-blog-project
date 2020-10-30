@@ -25,24 +25,18 @@ npm test'''
 
     stage('Deploy') {
       steps {
-<<<<<<< HEAD
         sh 'pwd'
         sh 'base=$(basename $PWD)'
         sh 'cd ..'
-        tar -czf $base.tar.gz $base
         sh 'tar -zcvf build.tgz $base'
         archiveArtifacts artifacts: 'build.tgz', fingerprint: true, followSymlinks: false
-=======
         sh 'cd ../'
         sh 'tar -zcvf build.tgz ecsd-blog-project_main'
         archiveArtifacts(artifacts: 'build.tgz', fingerprint: true)
->>>>>>> a800b3358bb933427b0e69400a1cf58feb0afa89
         sshPublisher(publishers: [sshPublisherDesc(configName: 'Web', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''tar -zxvf build.tgz && mv build /var/www/html
       cd /var/www/html/build
       npm start&''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'build.tgz')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
         echo 'Deployed'
-        sh '''pwd 
-ls -a'''
       }
     }
 
