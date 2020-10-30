@@ -10,26 +10,16 @@ pipeline {
 
     stage('Jest Tests') {
       steps {
-        sh 'npm test'
+        sh '''npm start&
+npm test'''
         echo 'API TESTS COMPLETE'
       }
     }
 
-    stage('UI Testing') {
-      parallel {
-        stage('Start Server') {
-          steps {
-            sh 'npm start&'
-          }
-        }
-
-        stage('Cypress Tests') {
-          steps {
-            sh 'npm run test-cypress'
-            echo 'TESTING COMPLETE'
-          }
-        }
-
+    stage('Cypress Tests') {
+      steps {
+        sh 'npm run test-cypress'
+        echo 'TESTING COMPLETE'
       }
     }
 
