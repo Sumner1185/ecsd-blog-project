@@ -2,7 +2,7 @@
 
 describe("Al & Joe's about us page", () => {
     beforeEach(() => {
-        cy.visit("http://localhost:8080/about");
+        cy.visit("http://localhost:5000/about");
     })
 
     it('Has main title content', () => {
