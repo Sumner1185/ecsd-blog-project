@@ -25,7 +25,7 @@ npm test'''
 
     stage('Deploy') {
       steps {
-        sh 'tar -zcvf build.tgz ./ecsd-blog-project_main'
+        sh 'tar -czvf build.tgz /ecsd-blog-project_main'
         archiveArtifacts(artifacts: 'build.tgz', fingerprint: true)
         sshPublisher(publishers: [sshPublisherDesc(configName: 'Web', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''tar -zxvf build.tgz && mv build /var/www/html
         cd /var/www/html/build
