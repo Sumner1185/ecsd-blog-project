@@ -29,11 +29,12 @@ router.delete('/blogs/:id', (req, res) => {
         blogs.forEach((blog, index) => {
             if (blog.id === id) {
                 blogs.splice(index, 1)
+                return res.json(blogs)
             }
         })
-        res.json(blogs)
+        res.status(404).json({ error: "Blog ID not found"} )
     } else {
-        res.status(400).json({ error: 'Blog post not found' })
+        res.status(418).json()
     }
 })
 

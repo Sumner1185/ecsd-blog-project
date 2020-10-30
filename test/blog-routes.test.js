@@ -50,25 +50,37 @@ const app = require('../index')
 
     describe('DELETE', () => {
 
-      // beforeEach(async (done) => {
-      // await request(app)
-      //   .post('/blogs')
-      //   .send({
-      //     "id": 5,
-      //     "title": "Testing",
-      //     "content": 'Also a test',
-      //   })
-      //   done()
-      // })
+      beforeEach(async () => {
+      const res = await request(app)
+        .post('/blogs')
+        .send({
+          "id": 5,
+          "title": "Testing",
+          "content": 'Also a test',
+        })
+        console.log("1", res.body)
+      })
 
-      // it('should delete a post', (done) => {
-      //   request(app)
-      //     .delete('/blogs/4')
-      //     .send({ message: 'Test' })
-      //     .expect(200, {
-      //       message: 'Test'
-      //     }, done)
-      // })
+      it('should delete a post', async () => {
+        // const res = await request(app)
+        //   .post('/blogs')
+        //   .send({
+        //     "id": 5,
+        //     "title": "Testing",
+        //     "content": 'Also a test',
+        //   })
+        // console.log("1", res.body)
+        const result = await request(app)
+          .delete('/blogs/5')
+          // .expect(200)
+          console.log("2", result.body)
+      })
+
+      it('should error if no id found', (done) => {
+        request(app)
+          .delete('/blogs/6')
+          .expect(404, done)
+      })
 
     })
 })
