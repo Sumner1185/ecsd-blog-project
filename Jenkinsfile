@@ -25,6 +25,7 @@ npm test'''
 
     stage('Deploy') {
       steps {
+        sh 'touch build.tgz'
         sh "tar --exclude='/var/lib/jenkins/workspace/ecsd-blog-project_main/node_modules' -zcvf build.tgz /var/lib/jenkins/workspace/ecsd-blog-project_main"
         archiveArtifacts artifacts: 'build.tgz', fingerprint: true, followSymlinks: false
         sshPublisher(publishers: [sshPublisherDesc(configName: 'Web', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''tar -zxvf build.tgz && mv build /var/www/html
