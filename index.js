@@ -10,7 +10,7 @@ app.engine('hbs', handlebars({
     extname: 'hbs'
 }))
 
- fetch('http://localhost:3000/blogs')
+ fetch('http://localhost:8080/blogs')
 .then(res => {
   if (res.status >= 400) {
     throw new Error("Bad response from server");

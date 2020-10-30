@@ -12,7 +12,6 @@ router.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname + '../../../about.html'));
 })
 
-
 router.post('/blogs', (req, res) => {
     const blogPost = { id: (blogs.length + 1).toString(), ...req.body }
     if (blogPost.id && blogPost.content) {
