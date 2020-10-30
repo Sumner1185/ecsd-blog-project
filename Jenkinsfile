@@ -25,8 +25,11 @@ npm test'''
 
     stage('Deploy') {
       steps {
+        sh 'pwd'
+        sh 'base=$(basename $PWD)'
         sh 'cd ..'
-        sh 'tar -zcvf build.tgz ecsd-blog-project_main'
+        tar -czf $base.tar.gz $base
+        sh 'tar -zcvf build.tgz $base'
         archiveArtifacts artifacts: 'build.tgz', fingerprint: true, followSymlinks: false
         sshPublisher(publishers: [sshPublisherDesc(configName: 'Web', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''tar -zxvf build.tgz && mv build /var/www/html
       cd /var/www/html/build
